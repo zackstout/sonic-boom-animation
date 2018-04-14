@@ -2,10 +2,18 @@
 let waves = [];
 let planes = [];
 let i = 0;
+let val = 0;
 
 function setup() {
   createCanvas(800, 500);
   background(232);
+  let slider = document.getElementById('myRange');
+  let value = slider.value;
+  slider.oninput = function() {
+    console.log(slider.value);
+    val = slider.value;
+  };
+  console.log(slider);
 }
 
 function draw() {
@@ -14,7 +22,7 @@ function draw() {
     wave.expand();
   });
   planes.forEach(plane => {
-    if (i % 10 == 0) {
+    if (i % 20 == 0) {
       plane.makeWave();
     }
     i++;
@@ -24,11 +32,13 @@ function draw() {
 }
 
 function mouseClicked() {
-  // const wave = new Wave(mouseX, mouseY);
-  // waves.push(wave);
-  const plane = new Plane(mouseX, mouseY);
-  // plane.start();
-  planes.push(plane);
+  if (mouseY > 0) {
+    // const wave = new Wave(mouseX, mouseY);
+    // waves.push(wave);
+    const plane = new Plane(mouseX, mouseY);
+    // plane.start();
+    planes.push(plane);
+  }
 }
 
 class Plane {
@@ -51,7 +61,9 @@ class Plane {
   }
 
   move() {
-    this.x += 1;
+    // console.log(val);
+    // console.log(parseFloat(val));
+    this.x += parseFloat(val);
   }
 }
 
@@ -60,6 +72,7 @@ class Wave {
     this.x = x;
     this.y = y;
     this.r = 0;
+    // console.log(val);
   }
 
   expand() {
