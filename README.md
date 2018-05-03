@@ -4,7 +4,7 @@ Animating sound waves as they emanate from moving objects to illustrate both son
 Check out the [live demo](https://zackstout.github.io/sonic-boom-animation/).
 
 ## Screenshot
-Getting close to MACH 1 (where a sonic boom occurs):
+Getting close to Mach 1 (where a sonic boom occurs):
 
 ![screen shot 2018-04-14 at 2 12 07 am](https://user-images.githubusercontent.com/29472568/38765558-88ab650e-3f89-11e8-974b-87c1a30414a4.png)
 
